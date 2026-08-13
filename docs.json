@@ -28,6 +28,18 @@
           {
             "group": "Get started",
             "pages": [
+              {
+                "group": "Introduction",
+                "pages": [
+                  "get-started/introduction/why-cloud-dlp",
+                  "get-started/introduction/nightfall-overview",
+                  "get-started/introduction/overview",
+                  "get-started/introduction/cloud-dlp-casb",
+                  "get-started/introduction/overview-nightfall",
+                  "get-started/introduction/why-choose-nightfall",
+                  "get-started/introduction/benefits"
+                ]
+              },
               "get-started/core-concepts"
             ]
           },
