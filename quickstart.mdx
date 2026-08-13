@@ -1,47 +1,73 @@
 ---
 title: "Quickstart"
-description: "Begin with a guide on the fastest path to a successful outcome"
+description: "Get up and running with Nightfall DLP in minutes."
 ---
 
-Describe how someone begins using your product. What is the first thing they need to do? Are there any prerequisites?
+Nightfall offers flexible deployment options depending on your goals. Whether you want to scan a SaaS application, build custom data loss prevention into your own app, or protect your AI endpoints, you can get started in just a few minutes.
 
-A quickstart should take someone from zero to using your product. They'll get a quick win and a sense of what they can accomplish.
+## Choose Your Path
 
-## Prerequisites
+<CardGroup cols={2}>
+  <Card title="Protect SaaS Apps" icon="cloud" href="/get-started/connect-integration">
+    Connect Nightfall to your existing SaaS tools like Slack, Google Drive, or GitHub to immediately discover and remediate sensitive data.
+  </Card>
+  <Card title="Developer APIs" icon="code" href="/reference/developer-apis">
+    Integrate Nightfall's detection engine directly into your workflows and applications using our developer-friendly APIs.
+  </Card>
+  <Card title="Endpoint & AI Security" icon="laptop" href="/prevent/ai-governance">
+    Deploy the Nightfall browser extension and endpoint agent to protect data exfiltration in real-time.
+  </Card>
+  <Card title="Run a Discovery Audit" icon="magnifying-glass" href="/discover/run-audit">
+    Perform a historical scan across your environment to understand your baseline data exposure risk.
+  </Card>
+</CardGroup>
 
-Before you begin, you must have:
+## Getting Started with SaaS Integrations
 
-- Requirement one (for example, Node.js 18+, a free account, an API key)
-- Requirement two (for example, a compatible device, a compatible browser, a compatible operating system)
-
-## Get started
+To start scanning for sensitive data in your SaaS applications, follow these basic steps:
 
 <Steps>
-  <Step title="Install">
-    Describe how to install your product or sign up.
+  <Step title="Connect an Integration">
+    Navigate to the **Integrations** tab in the Nightfall Dashboard and select the application you want to protect (e.g., Slack or Google Drive). Follow the OAuth prompts to authorize Nightfall.
+  </Step>
+  <Step title="Configure a Detection Policy">
+    Create a new **Policy** to define what data you want to detect (like Social Security Numbers or Credit Cards) and what actions to take when a violation occurs (like sending an alert or redacting the message).
+  </Step>
+  <Step title="Review Violations">
+    Once your policy is active, navigate to the **Events** dashboard. Here you can triage alerts, review the context of the exposed data, and take manual remediation actions if necessary.
+  </Step>
+</Steps>
+
+## Getting Started with the Developer API
+
+If you're building a custom integration, you can start scanning payloads immediately using our API.
+
+<Steps>
+  <Step title="Generate API Keys">
+    Log into the Nightfall Dashboard, navigate to the **Developer** section, and generate a new API Key. Keep this key secure and store it in an environment variable (`NIGHTFALL_API_KEY`).
+  </Step>
+  <Step title="Send a Scan Request">
+    Use one of our language-specific SDKs (Python, Go, Node.js, Ruby, Java) or make a direct HTTP request to the `/v3/scan` endpoint.
 
     ```bash
-    npm install your-package
+    curl -X POST https://api.nightfall.ai/v3/scan \
+      -H "Authorization: Bearer $NIGHTFALL_API_KEY" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "payload": ["My credit card number is 4000-0000-0000-0000"],
+        "policy": {
+          "detectors": [
+            { "name": "Credit Card Number" }
+          ]
+        }
+      }'
     ```
   </Step>
-  <Step title="Configure">
-    Describe any setup or configuration needed before first use.
-
-    ```bash
-    your-cli init
-    ```
-  </Step>
-  <Step title="Run it">
-    Show the first thing a user does to see it working.
-
-    ```bash
-    your-cli start
-    ```
+  <Step title="Process the Results">
+    The API will return an array of findings, including the exact location of the sensitive data, the confidence level, and the specific detector that was triggered.
   </Step>
 </Steps>
 
 <Tip>
-  Give people a way to get help. This could be a link to a support page, a chat with a customer support agent, or a forum for your product.
-
-  Example: Need help? Reach out to us at [support@yourcompany.com](mailto:support@yourcompany.com).
+  Need more help getting started? Reach out to our support team at [support@nightfall.ai](mailto:support@nightfall.ai) or check out our detailed [Cookbook](/cookbook/index) for more advanced tutorials.
 </Tip>
