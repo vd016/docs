@@ -11,7 +11,7 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Home",
+        "tab": "Get started",
         "groups": [
           {
             "group": "Welcome",
@@ -19,101 +19,113 @@
               "index",
               "quickstart"
             ]
-          }
-        ]
-      },
-      {
-        "tab": "Deployment & Admin",
-        "groups": [
-          {
-            "group": "Core Setup",
-            "pages": [
-              "admin/directory-sync",
-              "admin/users-roles"
-            ]
           },
           {
-            "group": "Connect Integrations",
+            "group": "Core Concepts",
             "pages": [
-              "admin/integrations/slack",
-              "admin/integrations/google-workspace",
-              "admin/integrations/m365"
-            ]
-          },
-          {
-            "group": "Alert Platforms",
-            "pages": [
-              "admin/alerts/jira",
-              "admin/alerts/teams"
+              "get-started/core-concepts"
             ]
           }
         ]
       },
       {
-        "tab": "Security Operations",
+        "tab": "Protect SaaS data",
         "groups": [
           {
-            "group": "Detection & Policies",
+            "group": "Data Discovery",
             "pages": [
-              "secops/policies",
-              "secops/detectors",
-              "secops/detection-rules"
+              "saas/historical-scans",
+              "saas/scoping"
             ]
           },
           {
-            "group": "Proactive Cleanup",
+            "group": "Policy Management",
             "pages": [
-              "secops/historical-scans",
-              "secops/data-discovery"
-            ]
-          },
-          {
-            "group": "Daily Incident Response",
-            "pages": [
-              "secops/dashboard",
-              "secops/violations",
-              "secops/playbook"
+              "saas/creating-policies",
+              "saas/advanced-settings"
             ]
           }
         ]
       },
       {
-        "tab": "AI & Endpoint",
+        "tab": "Respond to incidents",
         "groups": [
           {
-            "group": "Nightfall for AI",
+            "group": "Incident Response",
+            "pages": [
+              "incidents/dashboard-events",
+              "incidents/resolving-alerts",
+              "incidents/false-positives"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Operationalize Nightfall",
+        "groups": [
+          {
+            "group": "Team Operations",
+            "pages": [
+              "ops/alert-principles",
+              "ops/siem-integration",
+              "ops/alert-routing"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Protect AI, browser, and endpoints",
+        "groups": [
+          {
+            "group": "Endpoints & Browser",
+            "pages": [
+              "endpoints/windows-agent",
+              "endpoints/browser-extension"
+            ]
+          },
+          {
+            "group": "AI Protection",
             "pages": [
               "ai/firewall-for-ai",
               "ai/anthropic-claude"
             ]
-          },
+          }
+        ]
+      },
+      {
+        "tab": "Developer APIs",
+        "groups": [
           {
-            "group": "Endpoint Protection",
+            "group": "API Guide",
             "pages": [
-              "endpoint/exfiltration-prevention",
-              "endpoint/windows-agent"
+              "developers/api-overview",
+              "developers/api-policies",
+              "developers/api-alerts"
             ]
           }
         ]
       },
       {
-        "tab": "Developers",
+        "tab": "Integrations",
         "groups": [
           {
-            "group": "Developer APIs",
+            "group": "Connect Apps",
             "pages": [
-              "developers/using-scan-api"
+              "integrations/google-drive",
+              "integrations/slack",
+              "integrations/salesforce"
             ]
           }
         ]
       },
       {
-        "tab": "Changelog",
+        "tab": "Reference",
         "groups": [
           {
-            "group": "Release Notes",
+            "group": "Glossary & Resources",
             "pages": [
-              "changelog/release-notes"
+              "reference/glossary",
+              "reference/supported-file-types"
             ]
           }
         ]
