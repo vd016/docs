@@ -1,0 +1,69 @@
+---
+title: Windows Agent Installation
+---
+
+# Manual Installation
+
+## Overview
+
+This document outlines the steps to manually deploy the Nightfall AI Agent on a Windows device.
+
+## Prerequisites
+
+* Ensure that Windows endpoint has been enabled on your Nightfall tenant.
+  * Download the Nightfall AI Agent `NightfallAgent.msi` file from Nightfall.
+    * Download NightfallAgent.msi from [Nightfall portal](https://app.nightfall.ai/endpoint) to a local folder on the target machine
+      * Integrations -> Endpoint Windows -> Manage -> Download Package -> Download Package For Windows
+
+<figure><img src="/files/WKeu5o9tisLnNNxEKYM7" alt="Download MSI" /><figcaption></figcaption></figure>
+
+* Navigate to <https://app.nightfall.ai/policies/setup> > Exfiltration > Endpoint - (optional)
+
+## Deployment Steps
+
+1. Copy downloaded `NightfallAgent.msi` to a folder on a target machine.
+2. Run the Installer:
+   1. Launch `CMD` as an Administrator
+
+<figure><img src="/files/9tKo1rUYqL77C6MlOpFl" alt="Launch CMD as Admin" /><figcaption></figcaption></figure>
+
+b. Navigate to the folder where NightfallAgent.msi is downloaded to.
+
+     i. `cd C:\\users\\<username>\\Downloads\\` update the above accordingly.
+
+c. Copy the installation command from [Nightfall Portal](https://app.nightfall.ai/endpoint).
+
+    i. **Note** : this includes the necessary command line parameters for the agent to communicate with                                 Nightfall
+
+     ii. Integrations -> Endpoint Windows -> Manage -> Download Package -> 'To install, run the command as admin.
+
+<figure><img src="/files/4l1codmm4DcXNTF2fPYa" alt="Copy command from portal" /><figcaption></figcaption></figure>
+
+d. Paste the `msiexec` installation command copied from the above step to `cmd` and press Enter key.
+
+e. Installation should start in silent mode.
+
+<figure><img src="/files/DtqxwwrkbbkNKcjaniVb" alt="Silent installation" /><figcaption></figcaption></figure>
+
+3. Verify Installation
+   1. Once installation is complete, check if the agent is running:
+      1. Open **Task Manager** (`Ctrl + Shift + Esc`).
+      2. Look for the **Nightfall Agent** & **NightfallUI** processes under the **Processes** tab.
+
+<figure><img src="/files/kzFrZjkpw6FAaxpcbImr" alt="Verify processes in Task Manager" /><figcaption></figcaption></figure>
+
+b. Confirm the Nightfall agent is configured to your Nightfall tenant
+
+    i. On the windows machine:
+
+           1\. Double-click the Nightfall agent icon in the status bar.
+
+           2\. The displayed UUID should match your Nightfall tenant UUID located under <https://app.nightfall.ai/settings/>
+
+     ii. On the Nightfall console:
+
+          1\. The newly configured device should be listed under <https://app.nightfall.ai/endpoint>
+
+## Conclusion
+
+The Nightfall AI Agent should now be successfully installed, running on your Windows machine, and connected to your Nightfall tenant. If you run into any issues, please contact Nightfall AI support.

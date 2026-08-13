@@ -1,0 +1,18 @@
+---
+title: Nightfall for Anthropic Claude
+---
+
+# Nightfall for Claude Enterprise (Compliance API)
+
+Nightfall connects to your Claude Enterprise organization through Anthropic's Compliance API and treats Claude Enterprise as a monitored SaaS surface, the same way it treats Slack, Microsoft 365, Google Workspace, and the rest of your connectors. This is the fourth Claude surface Nightfall covers; the other three (described in Section 8) handle inline blocking and runtime audit. The Compliance API integration adds the server-side, organization-level monitor and audit layer.
+
+* Scans Claude Enterprise chat conversations and uploaded files for sensitive data: PII, PHI, PCI, secrets, source code, and any custom detector you have already built.
+* Surfaces violations in the standard Detection & Response page using existing policies and detection rules. No new console.
+* Monitor-only on this surface. Admin alerts (Slack, email, webhook, SIEM), optional end-user notification, and a full audit trail. The Compliance API is post-hoc, so no inline block is possible on this channel. Inline block on Claude continues to happen at the endpoint (Claude Desktop and the Claude web tab) and at the Hooks layer (Claude Code IDE and CLI). See Section 8.
+* Coverage scope of *this* integration, explicitly: Claude Enterprise chat conversations and uploaded files only. Not Claude Team. Not Claude on Bedrock or Vertex AI. Not model-inference content delivered through the Claude Platform. (Nightfall's runtime Claude coverage, listed in Section 8, handles the surfaces this integration does not.)
+
+### Prerequisites
+
+* Claude Enterprise plan with admin access to the Claude admin console.
+* A Nightfall account with Detection & Response enabled.
+* A Compliance Access Key generated from the Claude admin console. See Anthropic's guide for generating one.

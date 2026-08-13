@@ -23,54 +23,75 @@
         ]
       },
       {
-        "tab": "User Guide",
+        "tab": "Deployment & Admin",
         "groups": [
           {
-            "group": "Getting Started",
+            "group": "Core Setup",
             "pages": [
-              "user-guide/installation"
+              "admin/directory-sync",
+              "admin/users-roles"
             ]
           },
           {
-            "group": "Configure Integrations",
+            "group": "Connect Integrations",
             "pages": [
-              "user-guide/integrations/salesforce",
-              "user-guide/integrations/m365",
-              "user-guide/integrations/zendesk"
+              "admin/integrations/slack",
+              "admin/integrations/google-workspace",
+              "admin/integrations/m365"
             ]
           },
           {
-            "group": "Define Policies",
+            "group": "Alert Platforms",
             "pages": [
-              "user-guide/policies/overview",
-              "user-guide/policies/detectors",
-              "user-guide/policies/detection-rules"
-            ]
-          },
-          {
-            "group": "Monitor & Respond",
-            "pages": [
-              "user-guide/monitor/dashboard",
-              "user-guide/monitor/violations",
-              "user-guide/monitor/events"
+              "admin/alerts/jira",
+              "admin/alerts/teams"
             ]
           }
         ]
       },
       {
-        "tab": "Use Cases",
+        "tab": "Security Operations",
         "groups": [
           {
-            "group": "Compliance",
+            "group": "Detection & Policies",
             "pages": [
-              "use-cases/hipaa",
-              "use-cases/pci"
+              "secops/policies",
+              "secops/detectors",
+              "secops/detection-rules"
             ]
           },
           {
-            "group": "Data Protection",
+            "group": "Proactive Cleanup",
             "pages": [
-              "use-cases/exfiltration"
+              "secops/historical-scans",
+              "secops/data-discovery"
+            ]
+          },
+          {
+            "group": "Daily Incident Response",
+            "pages": [
+              "secops/dashboard",
+              "secops/violations",
+              "secops/playbook"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "AI & Endpoint",
+        "groups": [
+          {
+            "group": "Nightfall for AI",
+            "pages": [
+              "ai/firewall-for-ai",
+              "ai/anthropic-claude"
+            ]
+          },
+          {
+            "group": "Endpoint Protection",
+            "pages": [
+              "endpoint/exfiltration-prevention",
+              "endpoint/windows-agent"
             ]
           }
         ]
