@@ -28,76 +28,127 @@
           {
             "group": "Get started",
             "pages": [
+              "get-started/what-nightfall-protects",
+              "get-started/choose-your-solution",
+              "get-started/install-nightfall",
+              "get-started/connect-integration",
+              "get-started/first-policy-audit"
+            ]
+          },
+          {
+            "group": "Configure protection",
+            "pages": [
               {
-                "group": "Introduction",
+                "group": "Detection engine",
                 "pages": [
-                  "get-started/introduction/why-cloud-dlp",
-                  "get-started/introduction/nightfall-overview",
-                  "get-started/introduction/overview",
-                  "get-started/introduction/cloud-dlp-casb",
-                  "get-started/introduction/overview-nightfall",
-                  "get-started/introduction/why-choose-nightfall",
-                  "get-started/introduction/benefits"
+                  "configure-protection/detection-engine/detectors",
+                  "configure-protection/detection-engine/custom-detectors",
+                  "configure-protection/detection-engine/detection-rules",
+                  "configure-protection/detection-engine/evaluate-detection",
+                  "configure-protection/detection-engine/templates-sample-data"
                 ]
               },
-              "get-started/core-concepts"
+              {
+                "group": "Policies",
+                "pages": [
+                  "configure-protection/policies/create-policy",
+                  "configure-protection/policies/select-integration",
+                  "configure-protection/policies/define-scope",
+                  "configure-protection/policies/configure-actions",
+                  "configure-protection/policies/risk-scores",
+                  "configure-protection/policies/policy-templates"
+                ]
+              },
+              {
+                "group": "Alerts and integrations",
+                "pages": [
+                  "configure-protection/alerts/alert-platforms",
+                  "configure-protection/alerts/platforms",
+                  "configure-protection/alerts/integration-level"
+                ]
+              }
             ]
           },
           {
-            "group": "Protect SaaS data",
+            "group": "Discover and classify data",
             "pages": [
-              "saas/historical-scans",
-              "saas/scoping",
-              "saas/creating-policies",
-              "saas/advanced-settings"
+              "discover/overview",
+              "discover/run-audit",
+              "discover/audit-google-drive",
+              "discover/audit-github",
+              "discover/audit-salesforce",
+              "discover/audit-onedrive",
+              "discover/review-audit-results"
             ]
           },
           {
-            "group": "Respond to incidents",
+            "group": "Prevent data exposure",
             "pages": [
-              "incidents/dashboard-events",
-              "incidents/resolving-alerts",
-              "incidents/false-positives"
+              "prevent/saas-data-protection",
+              {
+                "group": "Data exfiltration prevention",
+                "pages": [
+                  "prevent/exfiltration/google-drive",
+                  "prevent/exfiltration/endpoints",
+                  "prevent/exfiltration/salesforce",
+                  "prevent/exfiltration/browser-ai"
+                ]
+              },
+              "prevent/ai-governance",
+              {
+                "group": "Email encryption",
+                "pages": [
+                  "prevent/email/gmail-setup",
+                  "prevent/email/encryption-policies",
+                  "prevent/email/sender-experience",
+                  "prevent/email/recipient-experience"
+                ]
+              }
             ]
           },
           {
-            "group": "Operationalize Nightfall",
+            "group": "Investigate and respond",
             "pages": [
-              "ops/alert-principles",
-              "ops/siem-integration",
-              "ops/alert-routing"
+              "investigate/dashboard-events",
+              "investigate/triage-event",
+              "investigate/filter-bulk-actions",
+              "investigate/remediate-exposure",
+              "investigate/exfiltration-events",
+              "investigate/posture-events",
+              "investigate/forensic-search"
             ]
           },
           {
-            "group": "Protect AI, browser, and endpoints",
+            "group": "Operate Nightfall",
             "pages": [
-              "endpoints/windows-agent",
-              "endpoints/browser-extension",
-              "ai/firewall-for-ai",
-              "ai/anthropic-claude"
-            ]
-          },
-          {
-            "group": "Developer APIs",
-            "pages": [
-              "developers/api-overview",
-              "developers/api-policies",
-              "developers/api-alerts"
+              "operate/dlp-playbooks",
+              "operate/alert-management",
+              "operate/coach-end-users",
+              "operate/reporting-dashboards",
+              "operate/security-tool-integrations",
+              "operate/roles-access",
+              "operate/release-notes"
             ]
           },
           {
             "group": "Integrations",
             "pages": [
-              "integrations/google-drive",
+              "integrations/all-integrations",
               "integrations/slack",
-              "integrations/salesforce"
+              "integrations/google-drive",
+              "integrations/github",
+              "integrations/confluence",
+              "integrations/jira"
             ]
           },
           {
             "group": "Reference",
             "pages": [
               "reference/glossary",
-              "reference/supported-file-types"
+              "reference/regex-library",
+              "reference/compliance",
+              "reference/faqs",
+              "reference/developer-apis"
             ]
           }
         ]
