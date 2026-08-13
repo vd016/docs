@@ -1,73 +1,98 @@
 ---
 title: "Quickstart"
-description: "Get up and running with Nightfall DLP in minutes."
+description: "Get up and running with Nightfall DLP from sign-up to your first scanned violation."
 ---
 
-Nightfall offers flexible deployment options depending on your goals. Whether you want to scan a SaaS application, build custom data loss prevention into your own app, or protect your AI endpoints, you can get started in just a few minutes.
+Nightfall is designed to be frictionless. Whether you are connecting a SaaS application (like Slack or Zendesk) or building a custom integration using our Developer APIs, you can go from creating an account to discovering sensitive data in minutes.
 
-## Choose Your Path
+Follow this end-to-end setup guide to deploy Nightfall.
 
-<CardGroup cols={2}>
-  <Card title="Protect SaaS Apps" icon="cloud" href="/get-started/connect-integration">
-    Connect Nightfall to your existing SaaS tools like Slack, Google Drive, or GitHub to immediately discover and remediate sensitive data.
+## 1. Create Your Account
+
+The first step is getting access to the Nightfall Dashboard, which acts as your command center for all policies, alerts, and integrations.
+
+<Steps>
+  <Step title="Sign Up">
+    Navigate to [app.nightfall.ai](https://app.nightfall.ai/) and click **Sign up**. Enter your required details and click **Create account**.
+  </Step>
+  <Step title="Verify Email">
+    Check your inbox for a verification email from `support@nightfall.ai`. Click the link to verify your identity.
+  </Step>
+  <Step title="Log In">
+    Once verified, click **Continue** to log in and open your blank Nightfall dashboard for the first time.
+  </Step>
+</Steps>
+
+## 2. Understand the Engine
+
+Before connecting an app, it's helpful to understand how Nightfall identifies sensitive data. Nightfall relies on three core components:
+
+<CardGroup cols={3}>
+  <Card title="Detectors" icon="radar">
+    The base entities (e.g., Credit Card, SSN, API Key) that Nightfall knows how to find.
   </Card>
-  <Card title="Developer APIs" icon="code" href="/reference/developer-apis">
-    Integrate Nightfall's detection engine directly into your workflows and applications using our developer-friendly APIs.
+  <Card title="Detection Rules" icon="ruler">
+    Logical groupings of Detectors (e.g., "Find Credit Cards AND require high confidence").
   </Card>
-  <Card title="Endpoint & AI Security" icon="laptop" href="/prevent/ai-governance">
-    Deploy the Nightfall browser extension and endpoint agent to protect data exfiltration in real-time.
-  </Card>
-  <Card title="Run a Discovery Audit" icon="magnifying-glass" href="/discover/run-audit">
-    Perform a historical scan across your environment to understand your baseline data exposure risk.
+  <Card title="Policies" icon="shield-check">
+    The final rule combining *What to look for* (Detection Rules) + *Where to look* (Scope) + *What to do* (Actions).
   </Card>
 </CardGroup>
 
-## Getting Started with SaaS Integrations
+## 3. Connect an Integration
 
-To start scanning for sensitive data in your SaaS applications, follow these basic steps:
-
-<Steps>
-  <Step title="Connect an Integration">
-    Navigate to the **Integrations** tab in the Nightfall Dashboard and select the application you want to protect (e.g., Slack or Google Drive). Follow the OAuth prompts to authorize Nightfall.
-  </Step>
-  <Step title="Configure a Detection Policy">
-    Create a new **Policy** to define what data you want to detect (like Social Security Numbers or Credit Cards) and what actions to take when a violation occurs (like sending an alert or redacting the message).
-  </Step>
-  <Step title="Review Violations">
-    Once your policy is active, navigate to the **Events** dashboard. Here you can triage alerts, review the context of the exposed data, and take manual remediation actions if necessary.
-  </Step>
-</Steps>
-
-## Getting Started with the Developer API
-
-If you're building a custom integration, you can start scanning payloads immediately using our API.
-
-<Steps>
-  <Step title="Generate API Keys">
-    Log into the Nightfall Dashboard, navigate to the **Developer** section, and generate a new API Key. Keep this key secure and store it in an environment variable (`NIGHTFALL_API_KEY`).
-  </Step>
-  <Step title="Send a Scan Request">
-    Use one of our language-specific SDKs (Python, Go, Node.js, Ruby, Java) or make a direct HTTP request to the `/v3/scan` endpoint.
-
-    ```bash
-    curl -X POST https://api.nightfall.ai/v3/scan \
-      -H "Authorization: Bearer $NIGHTFALL_API_KEY" \
-      -H "Content-Type: application/json" \
-      -d '{
-        "payload": ["My credit card number is 4000-0000-0000-0000"],
-        "policy": {
-          "detectors": [
-            { "name": "Credit Card Number" }
-          ]
-        }
-      }'
-    ```
-  </Step>
-  <Step title="Process the Results">
-    The API will return an array of findings, including the exact location of the sensitive data, the confidence level, and the specific detector that was triggered.
-  </Step>
-</Steps>
+Integrations start inactive by default. To start scanning, you need to authorize Nightfall to access your environment. 
 
 <Tip>
-  Need more help getting started? Reach out to our support team at [support@nightfall.ai](mailto:support@nightfall.ai) or check out our detailed [Cookbook](/cookbook/index) for more advanced tutorials.
+  If your required integration isn't available out-of-the-box, you can subscribe to **Firewall for AI** and build a custom integration using our [Developer APIs](/reference/developer-apis).
 </Tip>
+
+<Steps>
+  <Step title="Select your integration path">
+    Navigate to the **Integrations** tab in the Nightfall Dashboard. Choose the application you want to protect (for example, Slack or Zendesk).
+  </Step>
+  <Step title="Authorize Nightfall">
+    Follow the specific authorization steps for your app. For example, in Zendesk, click **Begin Setup** &rarr; **Connect to Zendesk** &rarr; **Allow**, and install the marketplace app.
+  </Step>
+  <Step title="Confirm Authorization">
+    Verify the integration was successful. The status in your Nightfall dashboard should change to **Authorized** or **Active**.
+  </Step>
+</Steps>
+
+## 4. Deploy Your First Policy
+
+With Nightfall connected to your environment, it's time to tell the engine what to look for and how to react.
+
+<Steps>
+  <Step title="Generate Detection Rules">
+    Navigate to **Detection Engine** and use the Detection Wizard to generate your first Detection Rules. Once created, copy the Detection Rule UUIDs if you plan to use the API, or simply select them in the UI.
+  </Step>
+  <Step title="Configure the Policy">
+    Navigate to **Policies** and create a new policy. You will need to define:
+    * **Scope**: Which channels, folders, or users to scan.
+    * **Detection Rules**: Which rules you created in the previous step.
+    * **Automated Actions**: What to do when data is found (e.g., delete, redact, or quarantine).
+    * **Risk**: The severity level of the violation.
+  </Step>
+  <Step title="Configure Alerts">
+    Set up notifications so your security team is aware of high-risk violations. You can route alerts to Slack, Jira, or a SIEM.
+  </Step>
+</Steps>
+
+## 5. Test and Monitor
+
+Your environment is now protected. Let's trigger a test to ensure everything is working correctly.
+
+<Steps>
+  <Step title="Run a Test Detection">
+    Input Nightfall-provided sample data (like a fake credit card number or API key) into your integrated application (e.g., send it in a test Slack channel or Zendesk ticket).
+  </Step>
+  <Step title="Review the Violation">
+    Navigate to the **Violations** or **Events** page in your Nightfall Dashboard. You should see your test violation populate immediately. 
+  </Step>
+  <Step title="Monitor Metrics">
+    Return to your dashboard overview to see your high-level security metrics aggregate in real-time.
+  </Step>
+</Steps>
+
+**Congratulations!** You have successfully deployed Nightfall from end to end. Explore the [Cookbook](/cookbook/index) to discover advanced recipes and automation workflows.
