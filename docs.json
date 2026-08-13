@@ -9,10 +9,10 @@
   },
   "favicon": "https://cdn.prod.website-files.com/636966d8ae15afa96e899d52/63970d434d856378477d5a9f_favicon%2032x32%20(2).png",
   "navigation": {
-    "pages": [
+    "tabs": [
       {
         "tab": "IT & Security Admins",
-        "pages": [
+        "groups": [
           {
             "group": "Getting Started",
             "pages": [
@@ -33,7 +33,7 @@
       },
       {
         "tab": "Developers",
-        "pages": [
+        "groups": [
           {
             "group": "Developer APIs",
             "pages": [
@@ -44,7 +44,7 @@
       },
       {
         "tab": "Changelog",
-        "pages": [
+        "groups": [
           {
             "group": "Release Notes",
             "pages": [
