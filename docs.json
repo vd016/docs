@@ -1,53 +1,89 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "Nightfall Documentation",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#8E5BE1",
+    "light": "#AF8AEA",
+    "dark": "#4308A3"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "https://cdn.prod.website-files.com/636966d8ae15afa96e899d52/63970d434d856378477d5a9f_favicon%2032x32%20(2).png",
   "navigation": {
     "pages": [
       {
-        "group": "Getting Started",
+        "tab": "IT & Security Admins",
         "pages": [
-          "index",
-          "quickstart"
+          {
+            "group": "Getting Started",
+            "pages": [
+              "index"
+            ]
+          },
+          {
+            "group": "Products",
+            "pages": [
+              "products/data-exfiltration-prevention",
+              "products/data-detection-and-response",
+              "products/data-discovery-and-classification",
+              "products/nyx-autonomous-dlp",
+              "products/mcp-ai-agent-security"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Developers",
+        "pages": [
+          {
+            "group": "Developer APIs",
+            "pages": [
+              "developers/using-scan-api"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Changelog",
+        "pages": [
+          {
+            "group": "Release Notes",
+            "pages": [
+              "changelog/release-notes"
+            ]
+          }
         ]
       }
     ],
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Website",
+          "href": "https://nightfall.ai",
+          "icon": "globe"
         },
         {
           "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
+          "href": "https://www.nightfall.ai/blog",
           "icon": "newspaper"
         }
       ]
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "https://cdn.prod.website-files.com/636966d8ae15afa96e899d52/67dc05f1c7c21f316cef10fa_nf-genesys-white.svg",
+    "dark": "https://cdn.prod.website-files.com/636966d8ae15afa96e899d52/67dc05f1c7c21f316cef10fa_nf-genesys-white.svg"
   },
   "navbar": {
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:support@nightfall.ai"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
+      "label": "Login",
+      "href": "https://app.nightfall.ai/login"
     }
   },
   "contextual": {
@@ -64,9 +100,8 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://twitter.com/NightfallAI",
+      "linkedin": "https://www.linkedin.com/company/nightfall-ai"
     }
   }
 }

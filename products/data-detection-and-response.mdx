@@ -1,0 +1,78 @@
+---
+title: "Data Detection and Response"
+description: "Prevent data exposure instantly"
+---
+
+# Data Detection and Response Events
+
+An **Event** is an incident that is triggered when a data leak is detected by Nightfall. The Data Detection and Response (aka sensitive data protection) Events page displays all the details about the sensitive events recorded in Nightfall from all integrations.
+
+Before we proceed further, let's understand what exactly a Finding and an Event are.
+
+<CardGroup cols={2}>
+  <Card title="Finding" icon="magnifying-glass">
+    A single instance of a data leak incident detected during scanning.
+  </Card>
+  <Card title="Event" icon="calendar">
+    An incident of data leaks, and a collection of findings detected while scanning an entire document or data source.
+  </Card>
+</CardGroup>
+
+## Events vs Findings
+
+When Nightfall scans data, a single Event can have multiple findings. For instance, consider that you upload a document to Google Drive. This document has 10 instances of secret information (e.g., 10 API keys or 10 credit card numbers). These 10 instances are known as **Findings**. Since Nightfall scans the entire document at once, these 10 Findings are recorded as a single **Event**.
+
+## Event Likelihood
+
+Each Event's name matches the Detector's name whose condition was violated. You can view the Likelihood or confidence level of an Event being an actual case of data leak:
+
+* <span style={{ color: '#3b82f6' }}>**Possible**</span>: Displayed in blue color.
+* <span style={{ color: '#eab308' }}>**Likely**</span>: Displayed in yellow color.
+* <span style={{ color: '#ef4444' }}>**Very Likely**</span>: Displayed in red color.
+
+<Info>
+If a single scanned entity (file or web page) violates multiple detector rules, Nightfall displays the list of all the detectors that the finding has violated. Such Events are displayed with a detector name, followed by a **+1** (if two detectors are violated), **+2** (if three detectors are violated), and so on.
+</Info>
+
+## Annotating Findings
+
+If you find that any of the findings discovered by Nightfall is not an actual data leak, you can use the **Annotate** feature to mark the specific finding as a false positive. You can also annotate findings that are definitely leaks as true positives.
+
+### To annotate a finding:
+
+1. Hover the mouse on the finding that you wish to annotate.
+2. Click the annotation icon.
+3. Select one of the annotation options (e.g., *Not a Credit card number*, *Not a violation*, or *True Positive*).
+4. (Optional) Enter comments for annotation.
+5. (Optional) Turn the **Apply to all identical findings** toggle switch to annotate all the similar findings.
+6. Click **Apply**.
+
+<Warning>
+When you annotate a finding as **Not a violation**, the Finding is displayed as **False Positive** on the Finding column in grey. If you annotate a Finding as **True Positive**, it is displayed in green.
+</Warning>
+
+### Bulk Annotate
+
+When the **Apply to all identical findings** toggle switch is enabled, the annotation is applied to all exact matches of the finding in all existing Events and future Events.
+
+Furthermore, the Nightfall AI Smart Auto-Ignore feature performs the following:
+* Events whose 100% of findings are annotated as false positives are automatically ignored.
+* When auto-ignored, an entry is added to the Event activity log for visibility.
+* Auto-ignored Events are updated to "Ignored" status and moved to the "Resolved" tab for visibility, analysts' review, or audit.
+
+<Tip>
+**Undo Auto-Ignore**
+Undo is an action available on any Event that has been automatically ignored by Nightfall AI. Taking the undo action reverts the status of the selected Event back to the pre-ignore state.
+</Tip>
+
+## Automated Event Duplication Management
+
+If an Event is reported multiple times, Nightfall updates the Event to the new instance, instead of creating new Events. However, it maintains a trail of the Events to ensure no reporting is lost.
+
+Filtering duplicates reduces alerts. It also saves you the time spent on analyzing each finding. New Events are not created when:
+* You remove a previously reported finding. The existing Event is updated.
+* A duplicate of a finding previously reported is added. The existing Event is updated.
+
+<Note>
+Filtering duplicate Events is currently available for Jira and Confluence.
+</Note>

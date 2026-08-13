@@ -1,0 +1,35 @@
+---
+title: "MCP & AI Agent Security"
+description: "Control what AI agents access and expose"
+---
+
+# AI Governance
+
+As employees adopt AI coding assistants like Claude Code, Cursor, and GitHub Copilot, those assistants increasingly reach beyond the editor - connecting to external tools and data sources through the **Model Context Protocol (MCP)**, running shell commands, and reading from your codebase and filesystem. Each of these actions is a potential path for sensitive data to leave your environment, often invisibly to traditional DLP. 
+
+Nightfall's AI Agent Governance gives security teams **visibility into what AI agents are doing** and the ability to **apply data protection policies to that activity in real time**. This article covers how Nightfall surfaces MCP server activity and the deeper monitoring and enforcement made possible through Hooks and OpenTelemetry.
+
+## MCP Server Visibility
+
+The Model Context Protocol lets AI assistants connect to external "servers" that provide tools and data - for example, a GitHub server, a database connector, or an internal knowledge base. Because these connections can move data in and out of the assistant, knowing **which servers are in use** is the foundation of governing them.
+
+Nightfall automatically discovers and reports MCP activity across your monitored endpoints:
+
+* **Connected servers and clients**: Nightfall detects the MCP servers each AI client connects to and surfaces these as connection events in the **AI Governance** dashboard, so you can see which assistants are talking to which servers.
+* **Configuration discovery**: MCP server configurations are discovered directly from the agent's settings on the endpoint, including assistants installed through managed channels such as the Microsoft Store.
+* **Accurate client attribution**: Each event is attributed to the specific assistant that generated it (for example, Claude Code or Claude Desktop), so activity is never reported as coming from an unknown source.
+
+<Info>
+Some AI clients label MCP tool activity differently, and a few do not include the server name in the activity they report. Where the server can be identified, you can scope policies to specific servers; where it cannot, that activity is governed under your broader "all servers" policies.
+</Info>
+
+## New capabilities via Hooks and OpenTelemetry
+
+Beyond seeing which servers are connected, Nightfall can inspect and act on what AI agents actually _do_ - the prompts, tool calls, and responses flowing through them. This is powered by two integration points built into modern AI development tools:
+
+* **Hooks**: AI coding assistants expose lifecycle "hooks" that fire as the agent works (for example, before a tool runs or before a response is returned). Nightfall integrates with these hooks to **inspect agent activity in real time and enforce policy** - scanning content for sensitive data and blocking or alerting before it leaves your environment.
+* **OpenTelemetry (OTel)**: Many AI tools emit detailed activity through the OpenTelemetry standard. Nightfall ingests this telemetry to give you **a complete, structured record of agent behavior**, feeding the same dashboards and detection policies you use across the rest of Nightfall.
+
+<Tip>
+Together, Hooks and OpenTelemetry extend AI Agent Governance from *visibility* into *control*: you can see the full picture of how AI agents operate in your environment and enforce your data protection policies directly on that activity.
+</Tip>

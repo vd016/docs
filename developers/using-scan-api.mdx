@@ -1,0 +1,138 @@
+---
+title: Using Scan API (with Python)
+description: Learn how to use the Nightfall v3 REST API to scan for sensitive data.
+---
+
+<Note>
+This guide demonstrates how to use Python's built-in `requests` library to interact with the Nightfall REST API. If you prefer, you can also use our [official Python SDK](https://pypi.org/project/nightfall/).
+</Note>
+
+Say you have a number of files containing customer or patient data and you are not sure which of them are safe to share in a less secure manner. By leveraging Nightfall’s Scan API, you can easily verify whether text contains sensitive PII, PHI, or PCI.
+
+To make a request to the Nightfall API you will need:
+* A Nightfall API key
+* A defined **Policy** containing the data types (Detectors) you wish to scan for
+* The data payload to scan
+
+You can read more about [obtaining a Nightfall API key](https://help.nightfall.ai/firewall-for-ai/key-concepts/setting-up-nightfall/creating-api-key) or review our [available data detectors](https://help.nightfall.ai/sensitive-data-protection/detection-engine/nightfall-detector-glossary).
+
+## 1. Setup and Authentication
+To run the following API call, we will use Python's standard `json`, `os`, and `requests` libraries. Ensure you have the `requests` library installed (`pip install requests`).
+
+```python
+import json
+import os
+import requests
+
+# We use the v3 scan endpoint
+endpoint = 'https://api.nightfall.ai/v3/scan'
+
+# Retrieve the API key from environment variables
+api_key = os.getenv('NIGHTFALL_API_KEY')
+if not api_key:
+    raise ValueError("NIGHTFALL_API_KEY environment variable is not set.")
+
+headers = {
+    'Content-Type': 'application/json',
+    'Authorization': f'Bearer {api_key}'
+}
+```
+
+<Warning>
+Your API key should **never** be hard-coded directly into your scripts or committed to version control.
+</Warning>
+
+## 2. Define the Policy and Detectors
+Next, we define the detectors we want to use. In Nightfall v3, detectors are grouped into **Detection Rules**, which are in turn grouped into a **Policy**. 
+
+In this example, we will scan for U.S. Social Security Numbers and Credit Card Numbers.
+
+```python
+policy = {
+    "detectionRules": [
+        {
+            "name": "PII and PCI Match Rule",
+            "logicalOp": "ANY",
+            "detectors": [
+                {
+                    "minNumFindings": 1,
+                    "minConfidence": "LIKELY",
+                    "detectorType": "NIGHTFALL_DETECTOR",
+                    "nightfallDetector": "US_SOCIAL_SECURITY_NUMBER"
+                },
+                {
+                    "minNumFindings": 1,
+                    "minConfidence": "LIKELY",
+                    "detectorType": "NIGHTFALL_DETECTOR",
+                    "nightfallDetector": "CREDIT_CARD_NUMBER"
+                }
+            ]
+        }
+    ]
+}
+```
+
+## 3. Build the Payload and Execute the Request
+Now we build the request body containing our policy and the raw data payload. The `payload` must be an array of strings. 
+
+```python
+# The text you want to scan
+data_to_scan = [
+    "The customer's social security number is 172-32-1176.",
+    "This string has no sensitive data.",
+    "My credit card number is 5310-2768-6832-9293."
+]
+
+request_body = {
+    "policy": policy,
+    "payload": data_to_scan
+}
+
+# Execute the POST request
+response = requests.post(endpoint, headers=headers, data=json.dumps(request_body))
+
+if response.status_code == 200:
+    results = response.json().get("findings", [])
+    
+    # Check if any element in the findings array contains matches
+    if any(len(finding) > 0 for finding in results):
+        print('Sensitive data detected!')
+        print(json.dumps(results, indent=2))
+    else:
+        print('No sensitive data detected. Hooray!')
+else:
+    print(f'Something went wrong -- Response {response.status_code}: {response.text}')
+```
+
+## Understanding the Response
+When a positive match is found, the API returns the matched fragment, the detector that was triggered, confidence levels, and the exact character location within the string.
+
+```json
+[
+  [
+    {
+      "finding": "172-32-1176",
+      "detector": {
+        "name": "US Social Security Number",
+        "uuid": "e30d9a87-f6c7-46b9-a8f4-16547901e069"
+      },
+      "confidence": "VERY_LIKELY",
+      "location": {
+        "byteRange": { "start": 41, "end": 52 },
+        "codepointRange": { "start": 41, "end": 52 }
+      }
+    }
+  ],
+  [],
+  [
+    {
+      "finding": "5310-2768-6832-9293",
+      "detector": {
+        "name": "Credit Card Number",
+        "uuid": "74c1815e-c0c3-4df5-8b1e-6cf98864a454"
+      },
+      "confidence": "VERY_LIKELY"
+    }
+  ]
+]
+```
