@@ -23,7 +23,7 @@
         ]
       },
       {
-        "tab": "User Guide",
+        "tab": "User guide",
         "groups": [
           {
             "group": "Get started",
@@ -126,12 +126,35 @@
               "operate/coach-end-users",
               "operate/reporting-dashboards",
               "operate/security-tool-integrations",
-              "operate/roles-access",
-              "operate/release-notes"
+              "operate/roles-access"
             ]
           },
           {
-            "group": "Integrations",
+            "group": "Reference",
+            "pages": [
+              "reference/glossary",
+              "reference/regex-library",
+              "reference/compliance"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Developer guide",
+        "groups": [
+          {
+            "group": "Developer APIs",
+            "pages": [
+              "reference/developer-apis"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Integrations",
+        "groups": [
+          {
+            "group": "All integrations",
             "pages": [
               "integrations/all-integrations",
               "integrations/slack",
@@ -140,15 +163,40 @@
               "integrations/confluence",
               "integrations/jira"
             ]
-          },
+          }
+        ]
+      },
+      {
+        "tab": "Cookbook",
+        "groups": [
           {
-            "group": "Reference",
+            "group": "Recipes",
             "pages": [
-              "reference/glossary",
-              "reference/regex-library",
-              "reference/compliance",
+              "cookbook/index",
+              "cookbook/example-recipe"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Release notes",
+        "groups": [
+          {
+            "group": "Changelog",
+            "pages": [
+              "operate/release-notes"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Support / FAQs",
+        "groups": [
+          {
+            "group": "Help",
+            "pages": [
               "reference/faqs",
-              "reference/developer-apis"
+              "reference/contact-support"
             ]
           }
         ]
