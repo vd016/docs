@@ -11,7 +11,7 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Get started",
+        "tab": "Home",
         "groups": [
           {
             "group": "Welcome",
@@ -19,110 +19,70 @@
               "index",
               "quickstart"
             ]
-          },
+          }
+        ]
+      },
+      {
+        "tab": "User Guide",
+        "groups": [
           {
-            "group": "Core Concepts",
+            "group": "Get started",
             "pages": [
               "get-started/core-concepts"
             ]
-          }
-        ]
-      },
-      {
-        "tab": "Protect SaaS data",
-        "groups": [
-          {
-            "group": "Data Discovery",
-            "pages": [
-              "saas/historical-scans",
-              "saas/scoping"
-            ]
           },
           {
-            "group": "Policy Management",
+            "group": "Protect SaaS data",
             "pages": [
+              "saas/historical-scans",
+              "saas/scoping",
               "saas/creating-policies",
               "saas/advanced-settings"
             ]
-          }
-        ]
-      },
-      {
-        "tab": "Respond to incidents",
-        "groups": [
+          },
           {
-            "group": "Incident Response",
+            "group": "Respond to incidents",
             "pages": [
               "incidents/dashboard-events",
               "incidents/resolving-alerts",
               "incidents/false-positives"
             ]
-          }
-        ]
-      },
-      {
-        "tab": "Operationalize Nightfall",
-        "groups": [
+          },
           {
-            "group": "Team Operations",
+            "group": "Operationalize Nightfall",
             "pages": [
               "ops/alert-principles",
               "ops/siem-integration",
               "ops/alert-routing"
             ]
-          }
-        ]
-      },
-      {
-        "tab": "Protect AI, browser, and endpoints",
-        "groups": [
-          {
-            "group": "Endpoints & Browser",
-            "pages": [
-              "endpoints/windows-agent",
-              "endpoints/browser-extension"
-            ]
           },
           {
-            "group": "AI Protection",
+            "group": "Protect AI, browser, and endpoints",
             "pages": [
+              "endpoints/windows-agent",
+              "endpoints/browser-extension",
               "ai/firewall-for-ai",
               "ai/anthropic-claude"
             ]
-          }
-        ]
-      },
-      {
-        "tab": "Developer APIs",
-        "groups": [
+          },
           {
-            "group": "API Guide",
+            "group": "Developer APIs",
             "pages": [
               "developers/api-overview",
               "developers/api-policies",
               "developers/api-alerts"
             ]
-          }
-        ]
-      },
-      {
-        "tab": "Integrations",
-        "groups": [
+          },
           {
-            "group": "Connect Apps",
+            "group": "Integrations",
             "pages": [
               "integrations/google-drive",
               "integrations/slack",
               "integrations/salesforce"
             ]
-          }
-        ]
-      },
-      {
-        "tab": "Reference",
-        "groups": [
+          },
           {
-            "group": "Glossary & Resources",
+            "group": "Reference",
             "pages": [
               "reference/glossary",
               "reference/supported-file-types"
