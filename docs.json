@@ -11,22 +11,66 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "IT & Security Admins",
+        "tab": "Home",
+        "groups": [
+          {
+            "group": "Welcome",
+            "pages": [
+              "index",
+              "quickstart"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "User Guide",
         "groups": [
           {
             "group": "Getting Started",
             "pages": [
-              "index"
+              "user-guide/installation"
             ]
           },
           {
-            "group": "Products",
+            "group": "Configure Integrations",
             "pages": [
-              "products/data-exfiltration-prevention",
-              "products/data-detection-and-response",
-              "products/data-discovery-and-classification",
-              "products/nyx-autonomous-dlp",
-              "products/mcp-ai-agent-security"
+              "user-guide/integrations/salesforce",
+              "user-guide/integrations/m365",
+              "user-guide/integrations/zendesk"
+            ]
+          },
+          {
+            "group": "Define Policies",
+            "pages": [
+              "user-guide/policies/overview",
+              "user-guide/policies/detectors",
+              "user-guide/policies/detection-rules"
+            ]
+          },
+          {
+            "group": "Monitor & Respond",
+            "pages": [
+              "user-guide/monitor/dashboard",
+              "user-guide/monitor/violations",
+              "user-guide/monitor/events"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Use Cases",
+        "groups": [
+          {
+            "group": "Compliance",
+            "pages": [
+              "use-cases/hipaa",
+              "use-cases/pci"
+            ]
+          },
+          {
+            "group": "Data Protection",
+            "pages": [
+              "use-cases/exfiltration"
             ]
           }
         ]
