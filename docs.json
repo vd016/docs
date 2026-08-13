@@ -70,8 +70,8 @@
     }
   },
   "logo": {
-    "light": "https://cdn.prod.website-files.com/636966d8ae15afa96e899d52/636966d8ae15af2a1a899d79_Nightfall_Logo_White.svg",
-    "dark": "https://cdn.prod.website-files.com/636966d8ae15afa96e899d52/636966d8ae15af2a1a899d79_Nightfall_Logo_White.svg"
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
   },
   "navbar": {
     "links": [
