@@ -28,11 +28,11 @@
           {
             "group": "Get started",
             "pages": [
-              "get-started/what-nightfall-protects",
-              "get-started/choose-your-solution",
-              "get-started/install-nightfall",
-              "get-started/connect-integration",
-              "get-started/first-policy-audit"
+              "user-guide/get-started/what-nightfall-protects",
+              "user-guide/get-started/choose-your-solution",
+              "user-guide/get-started/install-nightfall",
+              "user-guide/get-started/connect-integration",
+              "user-guide/get-started/first-policy-audit"
             ]
           },
           {
@@ -41,30 +41,30 @@
               {
                 "group": "Detection engine",
                 "pages": [
-                  "configure-protection/detection-engine/detectors",
-                  "configure-protection/detection-engine/custom-detectors",
-                  "configure-protection/detection-engine/detection-rules",
-                  "configure-protection/detection-engine/evaluate-detection",
-                  "configure-protection/detection-engine/templates-sample-data"
+                  "user-guide/configure-protection/detection-engine/detectors",
+                  "user-guide/configure-protection/detection-engine/custom-detectors",
+                  "user-guide/configure-protection/detection-engine/detection-rules",
+                  "user-guide/configure-protection/detection-engine/evaluate-detection",
+                  "user-guide/configure-protection/detection-engine/templates-sample-data"
                 ]
               },
               {
                 "group": "Policies",
                 "pages": [
-                  "configure-protection/policies/create-policy",
-                  "configure-protection/policies/select-integration",
-                  "configure-protection/policies/define-scope",
-                  "configure-protection/policies/configure-actions",
-                  "configure-protection/policies/risk-scores",
-                  "configure-protection/policies/policy-templates"
+                  "user-guide/configure-protection/policies/create-policy",
+                  "user-guide/configure-protection/policies/select-integration",
+                  "user-guide/configure-protection/policies/define-scope",
+                  "user-guide/configure-protection/policies/configure-actions",
+                  "user-guide/configure-protection/policies/risk-scores",
+                  "user-guide/configure-protection/policies/policy-templates"
                 ]
               },
               {
                 "group": "Alerts and integrations",
                 "pages": [
-                  "configure-protection/alerts/alert-platforms",
-                  "configure-protection/alerts/platforms",
-                  "configure-protection/alerts/integration-level"
+                  "user-guide/configure-protection/alerts/alert-platforms",
+                  "user-guide/configure-protection/alerts/platforms",
+                  "user-guide/configure-protection/alerts/integration-level"
                 ]
               }
             ]
@@ -72,36 +72,36 @@
           {
             "group": "Discover and classify data",
             "pages": [
-              "discover/overview",
-              "discover/run-audit",
-              "discover/audit-google-drive",
-              "discover/audit-github",
-              "discover/audit-salesforce",
-              "discover/audit-onedrive",
-              "discover/review-audit-results"
+              "user-guide/discover/overview",
+              "user-guide/discover/run-audit",
+              "user-guide/discover/audit-google-drive",
+              "user-guide/discover/audit-github",
+              "user-guide/discover/audit-salesforce",
+              "user-guide/discover/audit-onedrive",
+              "user-guide/discover/review-audit-results"
             ]
           },
           {
             "group": "Prevent data exposure",
             "pages": [
-              "prevent/saas-data-protection",
+              "user-guide/prevent/saas-data-protection",
               {
                 "group": "Data exfiltration prevention",
                 "pages": [
-                  "prevent/exfiltration/google-drive",
-                  "prevent/exfiltration/endpoints",
-                  "prevent/exfiltration/salesforce",
-                  "prevent/exfiltration/browser-ai"
+                  "user-guide/prevent/exfiltration/google-drive",
+                  "user-guide/prevent/exfiltration/endpoints",
+                  "user-guide/prevent/exfiltration/salesforce",
+                  "user-guide/prevent/exfiltration/browser-ai"
                 ]
               },
-              "prevent/ai-governance",
+              "user-guide/prevent/ai-governance",
               {
                 "group": "Email encryption",
                 "pages": [
-                  "prevent/email/gmail-setup",
-                  "prevent/email/encryption-policies",
-                  "prevent/email/sender-experience",
-                  "prevent/email/recipient-experience"
+                  "user-guide/prevent/email/gmail-setup",
+                  "user-guide/prevent/email/encryption-policies",
+                  "user-guide/prevent/email/sender-experience",
+                  "user-guide/prevent/email/recipient-experience"
                 ]
               }
             ]
@@ -109,24 +109,24 @@
           {
             "group": "Investigate and respond",
             "pages": [
-              "investigate/dashboard-events",
-              "investigate/triage-event",
-              "investigate/filter-bulk-actions",
-              "investigate/remediate-exposure",
-              "investigate/exfiltration-events",
-              "investigate/posture-events",
-              "investigate/forensic-search"
+              "user-guide/investigate/dashboard-events",
+              "user-guide/investigate/triage-event",
+              "user-guide/investigate/filter-bulk-actions",
+              "user-guide/investigate/remediate-exposure",
+              "user-guide/investigate/exfiltration-events",
+              "user-guide/investigate/posture-events",
+              "user-guide/investigate/forensic-search"
             ]
           },
           {
             "group": "Operate Nightfall",
             "pages": [
-              "operate/dlp-playbooks",
-              "operate/alert-management",
-              "operate/coach-end-users",
-              "operate/reporting-dashboards",
-              "operate/security-tool-integrations",
-              "operate/roles-access"
+              "user-guide/operate/dlp-playbooks",
+              "user-guide/operate/alert-management",
+              "user-guide/operate/coach-end-users",
+              "user-guide/operate/reporting-dashboards",
+              "user-guide/operate/security-tool-integrations",
+              "user-guide/operate/roles-access"
             ]
           },
           {
@@ -184,7 +184,7 @@
           {
             "group": "Changelog",
             "pages": [
-              "operate/release-notes"
+              "user-guide/operate/release-notes"
             ]
           }
         ]
